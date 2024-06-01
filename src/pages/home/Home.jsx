@@ -14,8 +14,8 @@ import Footer from '../../components/Footer'
 
 const Home = () => {
   return (
-    <div className="w-full h-full border-2 border-red-900">
-      <div className="relative w-full min-h-[134.5vh] border-2 border-blue-900">
+    <div className="w-full h-full">
+      <div className="relative w-full min-h-[134.5vh] ">
         <img
           src={HomePng}
           className="absolute object-center object-cover sm:h-auto min-h-[830.42px] -z-50"
