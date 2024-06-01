@@ -70,6 +70,8 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
+
+        
         <div className="w-full">
           <div className="relative">
             <img src={Img} alt="" />

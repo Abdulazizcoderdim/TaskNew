@@ -1,13 +1,13 @@
-import { Facebook, Instagram, Menu, Youtube } from "lucide-react"
-import { NavLink } from "react-router-dom"
+import { Facebook, Instagram, Menu, Youtube } from 'lucide-react'
+import { Link, NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className="bg-[#1E1E1E]">
+    <div id="home" className="bg-[#1E1E1E]">
       <div className="xl:container lg:px-24 px-8  py-10">
         <div className="flex items-center justify-between">
           <div className="flex items-center lg:gap-x-32 gap-x-10">
-            <div className="flex flex-col leading-[6px]">
+            <Link to={'/'} className="flex flex-col leading-[6px]">
               <span className="text-lg font-semibold uppercase text-white">
                 forest
               </span>
@@ -15,7 +15,7 @@ const Header = () => {
                 INVERONMENTAL
               </span>
               <div className="w-[59px] mt-2 h-[2px] bg-[#86DA44]" />
-            </div>
+            </Link>
             <div className="lg:flex hidden items-center gap-x-10 text-white">
               <NavLink
                 className="text-lg font-normal hover:text-green-200 transition-all duration-200"
@@ -29,17 +29,18 @@ const Header = () => {
               >
                 О нас
               </NavLink>
-              <NavLink
-                className="text-lg font-normal hover:text-green-200 transition-all duration-200"
-                to={'/services'}
-              >
-                Услуги
-              </NavLink>
+
               <NavLink
                 className="text-lg font-normal hover:text-green-200 transition-all duration-200"
                 to={'/projects'}
               >
                 Проекты
+              </NavLink>
+              <NavLink
+                className="text-lg font-normal hover:text-green-200 transition-all duration-200"
+                to={'/services'}
+              >
+                Услуги
               </NavLink>
               <NavLink
                 className="text-lg font-normal hover:text-green-200 transition-all duration-200"

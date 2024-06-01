@@ -1,12 +1,12 @@
 import { ArrowUp, Facebook, Instagram, Youtube } from 'lucide-react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Footer = () => {
   return (
     <div className="bg-black w-full">
       <div className="px-12 py-10 w-full">
         <div className="flex w-full justify-between items-center">
-          <div className="flex flex-col leading-[6px]">
+          <Link to={'/'} className="cursor-pointer flex flex-col leading-[6px]">
             <span className="text-lg font-semibold uppercase text-white">
               forest
             </span>
@@ -14,7 +14,7 @@ const Footer = () => {
               INVERONMENTAL
             </span>
             <div className="w-[59px] mt-2 h-[2px] bg-[#86DA44]" />
-          </div>
+          </Link>
 
           <p className="text-xs font-light text-white/50">
             © Все право защищены {new Date().getFullYear()}
@@ -59,7 +59,7 @@ const Footer = () => {
             </NavLink>
           </div>
 
-          <div>
+          <div className='text-white/50 border border-[#86DA44]'>
             <a href="#home">
               <ArrowUp size={30} />
             </a>
