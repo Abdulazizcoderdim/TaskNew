@@ -1,7 +1,25 @@
 import { Facebook, Instagram, Youtube } from 'lucide-react'
 import Img1 from '../../public/Contact.png'
+import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 
 const Consulta = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm()
+
+  const onSubmit = async (data) => {
+    try {
+      await new Promise((r) => setTimeout(r, 1000))
+      toast.success('Сообщение отправлено')
+      handleSubmit.reset()
+      console.log('data ---', data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div className="">
       <div className="relative w-full">
@@ -20,33 +38,53 @@ const Consulta = () => {
                 <p className="text-xl font-normal">
                   Персональный менеджер свяжется с вами <br />в течение 15 минут
                 </p>
-                <input
-                  type="text"
-                  placeholder="имя"
-                  className="outline-none bg-transparent placeholder:text-white/50 border-b-2 border-white/50 pb-2"
-                />
-                <input
-                  type="text"
-                  placeholder="E-mail"
-                  className="outline-none bg-transparent placeholder:text-white/50 border-b-2 border-white/50 pb-2"
-                />
-                <input
-                  type="text"
-                  placeholder="телефон"
-                  className="outline-none bg-transparent placeholder:text-white/50 border-b-2 border-white/50 pb-2"
-                />
+                <form
+                  className="flex flex-col gap-5"
+                  onSubmit={handleSubmit(onSubmit)}
+                >
+                  <input
+                    {...register('name', {
+                      required: true,
+                      minLength: {
+                        value: 3,
+                        message: 'Минимальная длина имени 3 символа',
+                      },
+                    })}
+                    type="text"
+                    placeholder="имя"
+                    className="outline-none bg-transparent placeholder:text-white/50 border-b-2 border-white/50 pb-2"
+                  />
+                  <input
+                    {...register('email', {
+                      required: true,
+                      validate: (value) => value.includes('@'),
+                    })}
+                    type="text"
+                    placeholder="E-mail"
+                    className="outline-none bg-transparent placeholder:text-white/50 border-b-2 border-white/50 pb-2"
+                  />
+                  <input
+                    {...register('phone', { required: true })}
+                    type="text"
+                    placeholder="телефон"
+                    className="outline-none bg-transparent placeholder:text-white/50 border-b-2 border-white/50 pb-2"
+                  />
 
-                <div className="flex items-center gap-1">
-                  <input type="checkbox" />
-                  <p className="text-sm text-white/70 font-light">
-                    Согласен(на) с обработкой персональных данных
-                  </p>
-                </div>
+                  <div className="flex items-center gap-1">
+                    <input type="checkbox" />
+                    <p className="text-sm text-white/70 font-light">
+                      Согласен(на) с обработкой персональных данных
+                    </p>
+                  </div>
 
-                <button className="relative border-2 z-50 text-white border-[#86DA44] py-4 text-xl transition-all duration-200 group">
-                  <div className="absolute top-0 -z-40 w-0 h-full bg-[#86DA44] group-hover:w-full transition-all duration-200" />
-                  ОСТАВИТЬ ЗАЯВКУ
-                </button>
+                  <button
+                    disabled={isSubmitting}
+                    className="relative border-2 z-50 text-white border-[#86DA44] py-4 text-xl transition-all duration-200 group"
+                  >
+                    <div className="absolute top-0 -z-40 w-0 h-full bg-[#86DA44] group-hover:w-full transition-all duration-200" />
+                    {isSubmitting ? 'Отправка...' : 'ОСТАВИТЬ ЗАЯВКУ'}
+                  </button>
+                </form>
               </div>
             </div>
             <div>

@@ -62,13 +62,13 @@ const Contacts = () => {
                   </div>
                 </div>
               </div>
-              <button className="relative border-2 z-50 text-white border-[#86DA44] py-4 text-xl  w-[210px] transition-all duration-200 group">
+              <button onClick={() => setOpen(true)} className="relative border-2 z-50 text-white border-[#86DA44] py-4 text-xl  w-[210px] transition-all duration-200 group">
                 <div className="absolute top-0 -z-40 w-0 h-full bg-[#86DA44] group-hover:w-full transition-all duration-200" />
                 Связаться с нами
               </button>
 
               {/* modal */}
-              {<Modal/>}
+              {open && <Modal setOpen={setOpen}/>}
               {/* modal */}
             </div>
             <div className="w-full">
