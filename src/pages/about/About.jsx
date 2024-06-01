@@ -38,11 +38,11 @@ const About = () => {
       <div className="container">
         <div className="flex justify-between">
           <div className="flex flex-col">
-            <h1 className="text-[90px] font-semibold text-white/10">о нас</h1>
+            <h1 className="text-[90px] font-semibold text-white/10 uppercase">о нас</h1>
             <div className="ml-20 -mt-7 flex flex-col">
               <div className="flex gap-5">
                 <div className="w-[2px] h-full bg-[#86DA44]" />
-                <p className="text-4xl font-semibold">
+                <p className="text-4xl font-semibold uppercase">
                   {' '}
                   <span className="text-[#86DA44]">принципы</span> которых{' '}
                   <br /> мы придерживаемся
@@ -112,13 +112,13 @@ const About = () => {
       <div className="container mt-24">
         <div className="grid grid-cols-2">
           <div className="flex flex-col ">
-            <h1 className="text-[80px] text-white/10 font-semibold">
+            <h1 className="text-[70px] text-white/10 font-semibold uppercase">
               Что мы можем?
             </h1>
             <div className="flex flex-col gap-5 items-end">
               <div className="flex gap-5">
                 <div className="w-[2px] h-full bg-[#86DA44]" />
-                <p className="text-4xl font-semibold">
+                <p className="text-4xl font-semibold uppercase">
                   {' '}
                   <span className="text-[#86DA44]">индивидуальное</span> <br />
                   проектирование вашех домов
@@ -173,11 +173,12 @@ const About = () => {
         </div>
       </div>
 
+{/* ---- */}
       <div className="mt-20 mb-10 container">
-        <h1 className="text-[90px] text-white/10 font-semibold">Проекты</h1>
+        <h1 className="text-[90px] text-white/10 font-semibold uppercase">Проекты</h1>
         <div className="flex items-center gap-5 ml-28 -mt-10">
           <div className="w-[2px] h-16 bg-[#86DA44] " />
-          <p className="text-4xl font-semibold text-[#86DA44]">
+          <p className="text-4xl uppercase font-semibold text-[#86DA44]">
             проекты компании
           </p>
         </div>
@@ -191,13 +192,13 @@ const About = () => {
         <div className="ml-28 -mt-10 flex flex-col">
           <div className="flex gap-5 items-center">
             <div className="w-[2px] h-16 bg-[#86DA44] " />
-            <p className="text-4xl font-semibold text-[#86DA44]">
+            <p className="text-4xl uppercase font-semibold text-[#86DA44]">
               наши партнеры
             </p>
           </div>
           <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-5 mt-5">
             {brands.map((item, index) => (
-              <div key={index} className="flex flex-col gap-4">
+              <div key={index} className="flex flex-col gap-10">
                 <img className='w-[150.3px] h-[42.35px]' src={item.img} alt="" />
                 <img className='w-[150.3px] h-[42.35px]' src={item.img2} alt="" />
               </div>
@@ -205,6 +206,8 @@ const About = () => {
           </div>
         </div>
       </div>
+      
+      {/* -- */}
     </div>
   )
 }

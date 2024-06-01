@@ -106,7 +106,7 @@ const Home = () => {
               <div className="flex md:w-1/2 w-full gap-16">
                 <div className="sm:flex hidden h-[458.12px] w-[2px] bg-[#86DA44]" />
                 <div className="flex gap-y-10 flex-col justify-end">
-                  <h1 className="md:text-6xl text-[35px] leading-[39px] text-white md:leading-[79.02px] font-normal">
+                  <h1 className="md:text-6xl uppercase text-[35px] leading-[39px] text-white md:leading-[79.02px] font-normal">
                     посреди <span className="text-[#86DA44]">леса</span> <br />{' '}
                     далеко от шума
                   </h1>

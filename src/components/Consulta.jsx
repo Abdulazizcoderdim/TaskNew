@@ -13,7 +13,7 @@ const Consulta = () => {
               <div className="flex flex-col gap-5">
                 <div className="flex gap-5 items-center">
                   <div className="w-[2px] h-16 bg-[#86DA44] " />
-                  <p className="text-4xl font-semibold text-[#86DA44]">
+                  <p className="text-4xl uppercase font-semibold text-[#86DA44]">
                     Консультация
                   </p>
                 </div>
@@ -53,7 +53,7 @@ const Consulta = () => {
               <div className="flex flex-col gap-5">
                 <div className="flex gap-5 items-center">
                   <div className="w-[2px] h-16 bg-[#86DA44] " />
-                  <p className="text-4xl font-semibold text-[#86DA44]">
+                  <p className="text-4xl font-semibold uppercase text-[#86DA44]">
                     КОНТАКТЫ
                   </p>
                 </div>
